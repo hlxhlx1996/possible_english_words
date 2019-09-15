@@ -1,5 +1,3 @@
-# possible_english_words
-
 # Word Anagram
 - Requirements:
     Input: a set of input characters, ranging from a-z, case-insensitive.
