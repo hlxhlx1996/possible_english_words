@@ -32,7 +32,7 @@ def run():
 
 	print('\nHere are all the possible English words with those letters:\n')
 	for word in wordlist:
-		print(word)
+		print(word, end = '')
 
 def getDictionary():
 	dic_file = open('/usr/share/dict/words', 'r')
@@ -41,9 +41,21 @@ def getDictionary():
 	return dic
 
 def getWordList(dic, chars):
+	char_list = list(chars)
 	wordlist = []
-	wordlist.append('agds')
-	wordlist.append('dg')
+	for word in dic:
+		if len(word) > len(char_list): # every character can be used only once
+			continue
+		temp_list = char_list.copy()
+		for c in word.lower():
+			if c in temp_list:
+				temp_list.remove(c)
+			else:
+				break
+
+		if len(char_list) - len(temp_list) == len(word) - 1:
+			wordlist.append(word)
+
 	return wordlist
 
 
