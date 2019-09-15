@@ -23,3 +23,5 @@
     
     % cd word_anagram && ./runme.sh
     
+    You will be prompted to enter requested set of characters, the result will be displayed in terminal.
+    
